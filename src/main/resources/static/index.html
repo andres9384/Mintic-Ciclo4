@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        background-image: url("/img/fondo.jpg");
+      }
+      a {
+        margin: 10px 0px 10px 30px;
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <img src="img/logo_adobespark.png" class="logo" alt="" width="100">
+      <center><h2>Ingresar al Sistema</h2></center>
+      <br />
+      <div class="message"></div>
+      <form action="">
+        <label for="email">Correo Electronico </label><br />
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="Ingresar Correo Electronico"
+          required
+        />
+        <br />
+        <label for="password">Contraseña </label><br />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Ingresar Contraseña"
+          required
+        />
+
+        <center><button onclick="ingreso()">Ingresar</button></center>
+      </form>
+      <br />
+     
+    </div>
+  </body>
+</html>

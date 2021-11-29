@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+body{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.contenedor{
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    color: #181515;
+    display: flex;
+    opacity: 0.8;
+    flex-direction: column;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    
+}
+label ,input,a{
+    margin-left: 30px;
+     
+}
+label{
+   
+    font-size: 20px; 
+    font-weight: bolder;
+    
+}
+input{
+ 
+        outline: none;
+  
+    margin: 0px 0px 25px 30px;
+    font-size: 15px; 
+    height: 30px;
+    color: black;
+    width: 80%;
+    font-weight: lighter;
+    background-color: white;
+    
+    border-top: white;
+    border-left:white;
+    border-right:white;
+    
+    border-bottom-color:#30ac78 ;
+}
+
+button{
+
+    width: 90%;
+    height: 2%px;
+    border-radius: 30px;
+    color: white;
+    background-color:#30ac78 ;
+    border-color:white ;
+    font-size: 25px;
+
+}
+.opciones{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+a:first-child{
+    width: 120px;
+}
+a{
+    width: 200px;
+  
+    text-decoration: solid;
+    color: #30ac78;
+}
+a:visited{
+    color: #30ac78;
+}
+h6{
+    margin: 0 30px 5px;
+}
+.logo{
+    display: inline-block;
+    position:relative;
+    margin: auto;
+    margin-top: -40px;
+    
+}
+h2{
+    margin-top: 0;
+}

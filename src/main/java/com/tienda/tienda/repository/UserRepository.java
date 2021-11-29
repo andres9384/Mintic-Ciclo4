@@ -35,4 +35,9 @@ public class UserRepository {
     public Optional<UserModel> autenticarUsuario(String email, String password) {
         return userCrudRepository.findByEmailAndPassword(email, password);
     }
+
+    public void  delete(UserModel id){
+        userCrudRepository.delete(id);
+    }
+    
 }

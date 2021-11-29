@@ -8,9 +8,11 @@ import com.tienda.tienda.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -60,8 +62,20 @@ public UserModel autenticarUsuario(@PathVariable("email") String email, @PathVar
      * @param Peticion get email
      * @return 
 */
-@GetMapping("/{email}")
+@GetMapping("/emailexist/{email}")
 public boolean existeEmail(@PathVariable("email") String email) {
     return userService.existeEmail(email);
 }
+
+   @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserModel updateUser(@RequestBody UserModel date){
+        return userService.updateUser(date);
+    }
+    
+    @DeleteMapping("/{numId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean deleteUser(@PathVariable("numId")int id){
+        return userService.deleteUser(id);
+    }
 }
