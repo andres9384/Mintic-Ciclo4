@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/usuarios.js "></script>
+</head>
+<body style="background-image: url(img/fondo.jpg) ;" >
+    <div class="content">
+        <div  class="siderbar">
+           <center> <img src="img/logo_adobespark.png" alt="Logo" width="200px" >
+  
+           </center>
+           <ul>
+               <li><i class="fas fa-users"></i><a style="color:red;" href="">Usuarios</a></li>
+               <li><i class="fas fa-fill"></i></i><a style="color:red;" href="">Producto</a></li>
+            </ul>
+        </div>
+
+        <div class="main2">
+          <h1>Usuarios</h1>
+          <button type="button" class="agregar " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i  class="fas fa-plus"></i></button>
+          <div style="width: 100%;">
+            
+            <table  >
+                
+                <thead>
+                    <tr>
+                    <th>#</th>
+                    <th>Identificacion</th>
+                    <th>Nombre</th>
+                    <th>Celular</th>  
+                    <th>Correo Electronico</th>
+                    <th>Zona</th>
+                    <th>Rol</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+                <tbody id="user">
+                
+                 
+                </tbody>
+            </table>
+            
+           
+
+        </div></div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="number" class="col-3" id="id" placeholder="Id">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="nombre" placeholder="Nombre">
+
+
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="identificacion" placeholder="Identificacion">
+                  
+
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="direccion" placeholder="Direccion">
+                  
+               
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="telefono" placeholder="Telefono">
+                 
+              
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="correo" placeholder="Correo Electronico">
+               
+                 
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="contraseña" placeholder="Contraseña">
+                  
+                    
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="zona" placeholder="Zona">
+                
+                    
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="tipo" placeholder="Tipo">
+                  
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="saveUser()" data-bs-dismiss="modal" >Guardar Usuario</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+ 
+    
+   
+    
+</body>
+</html>

@@ -1,7 +1,10 @@
 package com.tienda.tienda.model;
 
 import java.io.Serializable;
-// import java.util.Date;
+import java.util.Date;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,15 +20,16 @@ import lombok.NoArgsConstructor;
 public class UserModel implements Serializable {
    
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
     private String identification;
 
     private String name;
 
-    // private Date birthtDay;
+    private Date birthtDay;
 
-    // private String monthBirthtDay;
+    private String monthBirthtDay;
 
     private String address;
 

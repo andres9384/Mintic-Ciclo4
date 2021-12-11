@@ -39,5 +39,9 @@ public class UserRepository {
     public void  delete(UserModel id){
         userCrudRepository.delete(id);
     }
+ 
     
+    public Optional<UserModel>lastUserId(){
+        return userCrudRepository.findTopByOrderByIdDesc();
+    }
 }

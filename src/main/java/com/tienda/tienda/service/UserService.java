@@ -24,6 +24,25 @@ public class UserService {
 
     public UserModel registrar(UserModel user) {
         
+        Optional <UserModel> userIdMaximo = userRepository.lastUserId();
+
+        if(user.getId() ==null){
+            if (userIdMaximo.isEmpty()) {
+                user.setId(1);
+            }else{
+                user.setId(userIdMaximo.get().getId()+1);
+            }
+            Optional<UserModel> e = userRepository.getUser(user.getId());
+            if(e.isEmpty()){
+                if(existeEmail(user.getEmail())==false){
+                    return userRepository.save(user);
+                }else{
+                    return user;
+                }
+            }else{
+                return user;    
+            }
+        }
                 return userRepository.save(user);
   
     }
@@ -36,7 +55,7 @@ public class UserService {
         Optional<UserModel> usuario = userRepository.autenticarUsuario(email, password);
 
         if (usuario.isEmpty()) {
-            return new UserModel(null, null, null, null, null, null, null, null, null);
+            return new UserModel(null,null,null, null, null, null, null, null, null, null, null);
             // new UserModel(id, identification, name, birthtDay, monthBirthtDay, address, cellPhone, email, password, zone, type)
         } else {
             return usuario.get();
@@ -52,6 +71,12 @@ public class UserService {
                 }
                 if (date.getName() != null) {
                     consulte.get().setName(date.getName());
+                }
+                if (date.getBirthtDay() != null) {
+                    consulte.get().setBirthtDay(date.getBirthtDay());
+                }
+                if (date.getMonthBirthtDay() != null) {
+                    consulte.get().setMonthBirthtDay(date.getMonthBirthtDay());
                 }
                 if (date.getAddress() != null) {
                     consulte.get().setAddress(date.getAddress());

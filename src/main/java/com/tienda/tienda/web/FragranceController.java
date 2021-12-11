@@ -1,6 +1,7 @@
 package com.tienda.tienda.web;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.tienda.tienda.model.FragranceModel;
 import com.tienda.tienda.service.FragranceService;
@@ -31,6 +32,10 @@ public class FragranceController {
         return fragranceService.getAll();
     }
 
+    @GetMapping("/{fragance}")
+    public Optional<FragranceModel> getFragance(@PathVariable("fragance") String reference) {
+        return fragranceService.getFragrance(reference);
+    }
 
 @PostMapping("/new")
 @ResponseStatus(HttpStatus.CREATED)

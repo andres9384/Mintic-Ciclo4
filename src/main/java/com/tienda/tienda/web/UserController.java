@@ -1,6 +1,7 @@
 package com.tienda.tienda.web;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.tienda.tienda.model.UserModel;
 import com.tienda.tienda.service.UserService;
@@ -50,32 +51,31 @@ public UserModel registrar(@RequestBody UserModel user) {
     return userService.registrar(user);
 }
     
-/**
-     * @param peticion email y password
-     * @return 
- */
+@GetMapping("/{id}")
+public Optional<UserModel> getUser(@PathVariable("id") int id) {
+    return  userService.getUser(id);
+}
+
 @GetMapping("/{email}/{password}")
 public UserModel autenticarUsuario(@PathVariable("email") String email, @PathVariable("password") String password) {
     return userService.autenticarUsuario(email, password);
 }
-/**
-     * @param Peticion get email
-     * @return 
-*/
+
 @GetMapping("/emailexist/{email}")
 public boolean existeEmail(@PathVariable("email") String email) {
     return userService.existeEmail(email);
 }
 
-   @PutMapping("/update")
-    @ResponseStatus(HttpStatus.CREATED)
-    public UserModel updateUser(@RequestBody UserModel date){
-        return userService.updateUser(date);
-    }
+@PutMapping("/update")
+ @ResponseStatus(HttpStatus.CREATED)
+ public UserModel updateUser(@RequestBody UserModel date){
+     return userService.updateUser(date);
+ }
     
-    @DeleteMapping("/{numId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean deleteUser(@PathVariable("numId")int id){
-        return userService.deleteUser(id);
-    }
+@DeleteMapping("/{numId}")
+@ResponseStatus(HttpStatus.NO_CONTENT)
+public boolean deleteUser(@PathVariable("numId")int id){
+    return userService.deleteUser(id);
+}
+  
 }
