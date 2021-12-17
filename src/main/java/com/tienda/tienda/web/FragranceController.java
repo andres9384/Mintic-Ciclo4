@@ -38,7 +38,7 @@ public class FragranceController {
     }
 
 @PostMapping("/new")
-@ResponseStatus(HttpStatus.CREATED)
+@ResponseStatus(HttpStatus.CREATED) 
 public FragranceModel registrar(@RequestBody FragranceModel fragrance) {
     return fragranceService.saveFragrance(fragrance);
 }

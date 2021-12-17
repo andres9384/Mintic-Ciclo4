@@ -203,3 +203,11 @@ li:hover{
   .fa-plus{
       color: white;
   }
+
+.labelCheck{
+    font-size:15px;
+    margin-left:10px;
+}
+#productos{
+    margin-left: 30px;
+}

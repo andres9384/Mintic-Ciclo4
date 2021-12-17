@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/usuarios.js "></script>
+    <script src="js/productos.js "></script>
 </head>
 <body style="background-image: url(img/fondo.jpg) ;" >
     <div class="content">
@@ -26,7 +26,7 @@
         </div>
 
         <div class="main2">
-          <h1>Usuarios</h1>
+          <h1>Productos</h1>
           <button type="button" class="agregar " onclick="agregar()" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i  class="fas fa-plus"></i></button>
           <div style="width: 100%;">
             
@@ -34,23 +34,23 @@
                 
                 <thead>
                     <tr>
-                    <th>#</th>
-                    <th>Identificacion</th>
-                    <th>Nombre</th>
-                    <th>Celular</th>  
-                    <th>Correo Electronico</th>
-                    <th>Zona</th>
-                    <th>Rol</th>
+                 
+                    <th>Referencia</th>
+                    <th>Marca</th>
+                    <th>Categoria</th>  
+                    <th>Presentacion</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
-                <tbody id="user">
+                <tbody id="products">
                 
                  
                 </tbody>
             </table>
-            
-           
+    
 
         </div></div>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -63,48 +63,42 @@
               <div class="modal-body">
                 <form>
                   
-                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="nombre" placeholder="Nombre">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="referencia" placeholder="Referencia">
 
 
-                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="identificacion" placeholder="Identificacion">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="marca" placeholder="Marca">
                   
 
-                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="direccion" placeholder="Direccion">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="categoria" placeholder="Categoria">
                   
                
-                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="telefono" placeholder="Telefono">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="presentacion" placeholder="Presentacion">
                  
               
-                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="correo" placeholder="Correo Electronico">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="descripcion" placeholder="Descripcion">
                
                  
-                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="contraseña" placeholder="Contraseña">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;"  type="number" class="col-3" id="precio" placeholder="Precio">
                   
                     
-                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="zona" placeholder="Zona">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="number" class="col-3" id="cantidad" placeholder="Cantidad">
                 
                     
-                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="tipo" placeholder="Tipo">
+                    <input style="width: 40%; margin-bottom: 30px;margin-left: 30px;" type="text" class="col-3" id="fotografia" placeholder="Fotografia">
                   
                 </form>
               </div>
               <div class="modal-footer">
              
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button id="agregar" type="button" class="btn btn-primary" onclick="saveUser()" data-bs-dismiss="modal" >Guardar Usuario</button>
-                <button id="actualizar" type="button" class="btn btn-warning"  data-bs-dismiss="modal" >Actualizar Usuario</button>
+                <button id="agregar" type="button" class="btn btn-primary" onclick="saveProducts()" data-bs-dismiss="modal" >Guardar Producto</button>
+                <button id="actualizar" type="button" class="btn btn-warning"  data-bs-dismiss="modal" >Actualizar Producto</button>
               </div>
             </div>
           </div>
         </div>
 
-
-
-        
     </div>
- 
-    
-   
     
 </body>
 </html>

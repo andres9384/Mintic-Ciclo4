@@ -75,11 +75,19 @@ public class OrderService {
         return orderRepository.findByZone(zone);
     }
 
-    //   public List<OrderModel>ordersSalesManByDate(String date, int id){
-    //     return orderRepository.ordersSalesManByDate(date,id);
-    // }
+    public List<OrderModel>ordersSalesManById( int id){
+        return orderRepository.ordersSalesManById(id);
+    }
 
-    //   public List<OrderModel>ordersSalesManByState(String state, Integer id){
-    //     return orderRepository.ordersSalesManByState(state,id);
-    // }
+    
+
+    public List<OrderModel>ordersSalesManByState(String state, int id){
+        return orderRepository.ordersSalesManByState(state,id);
+    }
+ 
+   public List<OrderModel>ordersSalesManByDate(String date, int id){
+        return orderRepository.ordersSalesManByDate(date,id);
+    }
+
+    
 }
