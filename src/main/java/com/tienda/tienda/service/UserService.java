@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-     
+
     public List<UserModel> getAll() {
         return userRepository.getAll();
     }
@@ -23,28 +23,28 @@ public class UserService {
     }
 
     public UserModel registrar(UserModel user) {
-        
-        Optional <UserModel> userIdMaximo = userRepository.lastUserId();
 
-        if(user.getId() ==null){
+        Optional<UserModel> userIdMaximo = userRepository.lastUserId();
+
+        if (user.getId() == null) {
             if (userIdMaximo.isEmpty()) {
                 user.setId(1);
-            }else{
-                user.setId(userIdMaximo.get().getId()+1);
+            } else {
+                user.setId(userIdMaximo.get().getId() + 1);
             }
             Optional<UserModel> e = userRepository.getUser(user.getId());
-            if(e.isEmpty()){
-                if(existeEmail(user.getEmail())==false){
+            if (e.isEmpty()) {
+                if (existeEmail(user.getEmail()) == false) {
                     return userRepository.save(user);
-                }else{
+                } else {
                     return user;
                 }
-            }else{
-                return user;    
+            } else {
+                return user;
             }
         }
-                return userRepository.save(user);
-  
+        return userRepository.save(user);
+
     }
 
     public boolean existeEmail(String email) {
@@ -55,14 +55,15 @@ public class UserService {
         Optional<UserModel> usuario = userRepository.autenticarUsuario(email, password);
 
         if (usuario.isEmpty()) {
-            return new UserModel(null,null,null, null, null, null, null, null, null, null, null);
-            // new UserModel(id, identification, name, birthtDay, monthBirthtDay, address, cellPhone, email, password, zone, type)
+            return new UserModel(null, null, null, null, null, null, null, null, null, null, null);
+            // new UserModel(id, identification, name, birthtDay, monthBirthtDay, address,
+            // cellPhone, email, password, zone, type)
         } else {
             return usuario.get();
         }
     }
 
-       public UserModel updateUser(UserModel date) {
+    public UserModel updateUser(UserModel date) {
         if (date.getId() != null) {
             Optional<UserModel> consulte = userRepository.getUser(date.getId());
             if (!consulte.isEmpty()) {
@@ -109,5 +110,9 @@ public class UserService {
             return true;
         }
         return false;
+    }
+
+    public List<UserModel> birthDayList(String fecha) {
+        return userRepository.birthDayList(fecha);
     }
 }

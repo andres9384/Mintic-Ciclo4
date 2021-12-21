@@ -8,6 +8,7 @@ import com.tienda.tienda.repository.crud.FragranceCrudRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
 @Repository
 public class FragranceRepository {
@@ -30,6 +31,13 @@ public class FragranceRepository {
         fragranceCrudRepository.delete(id);
     }
 
+    public List<FragranceModel> productByPrice(double precio){
+        return fragranceCrudRepository.findByPriceLessThanEqual(precio);
+    }
+
+    public List<FragranceModel> findByDescriptionLike(String description){
+        return fragranceCrudRepository.findByDescriptionLike(description);
+    }
 
 
 }

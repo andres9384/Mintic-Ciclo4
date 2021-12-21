@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/fragance")
 @CrossOrigin("*")
 public class FragranceController {
-       
-	@Autowired
+
+    @Autowired
     private FragranceService fragranceService;
 
     @GetMapping("/all")
@@ -37,23 +37,31 @@ public class FragranceController {
         return fragranceService.getFragrance(reference);
     }
 
-@PostMapping("/new")
-@ResponseStatus(HttpStatus.CREATED) 
-public FragranceModel registrar(@RequestBody FragranceModel fragrance) {
-    return fragranceService.saveFragrance(fragrance);
-}
-
-@PutMapping("/update")
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public FragranceModel updateFragrance(@RequestBody FragranceModel date){
+    public FragranceModel registrar(@RequestBody FragranceModel fragrance) {
+        return fragranceService.saveFragrance(fragrance);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public FragranceModel updateFragrance(@RequestBody FragranceModel date) {
         return fragranceService.updateFragrance(date);
     }
-    
+
     @DeleteMapping("/{numId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean deleteUser(@PathVariable("numId")String id){
+    public boolean deleteUser(@PathVariable("numId") String id) {
         return fragranceService.deleteFragance(id);
     }
-    
 
+    @GetMapping("/price/{price}")
+    public List<FragranceModel> productByPrice(@PathVariable("price") Double price) {
+        return fragranceService.productByPrice(price);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<FragranceModel> getDescription(@PathVariable("description") String description) {
+        return fragranceService.findByDescriptionLike(description);
+    }
 }

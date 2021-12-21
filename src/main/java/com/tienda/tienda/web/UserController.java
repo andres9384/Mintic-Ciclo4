@@ -77,5 +77,10 @@ public boolean existeEmail(@PathVariable("email") String email) {
 public boolean deleteUser(@PathVariable("numId")int id){
     return userService.deleteUser(id);
 }
+
+@GetMapping("/birthday/{month}")
+public List<UserModel> birthDay(@PathVariable("month") String month) {
+    return userService.birthDayList(month);
+}
   
 }

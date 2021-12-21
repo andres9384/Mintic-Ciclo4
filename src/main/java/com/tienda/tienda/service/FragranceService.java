@@ -68,4 +68,12 @@ public class FragranceService {
         return false;
     }
 
+    public List<FragranceModel> productByPrice(double precio){
+        return fragranceRepository.productByPrice(precio);
+    }
+
+    public List<FragranceModel> findByDescriptionLike(String description){
+        return fragranceRepository.findByDescriptionLike(description);
+    }
+
 }
